@@ -43,10 +43,10 @@ public class BooksController {
     return booksService.getBookByRating(rating);
   }
 
-//  @GetMapping("random/{X}")
-//  public List<Books> getXBooks(@PathVariable int X){
-//    return booksService.getXBooks(X);
-//  }
+  @GetMapping("/index/{index}")
+  public List<Sorting> getBooks(@PathVariable int index){
+    return sortingService.getBookByX(index);
+  }
 
   @PostMapping
   public void registerNewBook(@RequestBody Books books){
