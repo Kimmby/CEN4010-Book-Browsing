@@ -42,12 +42,13 @@ public class BooksService {
     return booksRepository.findAllByRatingGreaterThanEqual(rating);
   }
 
-//  //amt of books
-//  public List<Books> getXBooks(int X){
-//    for(int i = 0; i < X; X++){
-//      return booksRepository.findOne( );
-//    }
-//    //return booksRepository.findAllByX(X);
-//  }
+  //amt of books entered by user
+  public List<Sorting> getBookByX(int index){
+    List<Sorting> books = new ArrayList<>();
+    for(int i = 0; i < index; i++){
+      books.add(sortingRepository.findAll().get(i));
+    }
+    return books;
+  }
 
 }
